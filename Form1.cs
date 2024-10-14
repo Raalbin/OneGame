@@ -22,5 +22,18 @@ namespace OneGame
             if (e.KeyChar == (char)Keys.Escape)
                 this.Close(); 
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            int speed = 50;
+            doroga.Top += speed;
+            doroga2.Top += speed;
+
+            if(doroga.Top >= 650)
+            {
+                doroga.Top = 0;
+                doroga2.Top = -650;
+            }
+        }
     }
 }
