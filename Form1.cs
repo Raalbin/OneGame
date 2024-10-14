@@ -25,7 +25,7 @@ namespace OneGame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            int speed = 50;
+            int speed = 15;
             doroga.Top += speed;
             doroga2.Top += speed;
 
