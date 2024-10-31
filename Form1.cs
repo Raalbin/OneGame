@@ -52,11 +52,29 @@ namespace OneGame
             doroga.Top += speed;
             doroga2.Top += speed;
 
-            if(doroga.Top >= 650)
+            int blaspeed = 15;
+            enemy1.Top += blaspeed;
+            enemy2.Top += blaspeed;
+
+            if (doroga.Top >= 650)
             {
                 doroga.Top = 0;
                 doroga2.Top = -650;
             }
+
+            if (enemy1.Top >= 650)
+            {
+                enemy1.Top = -130;
+                Random rand = new Random();
+                enemy1.Left = rand.Next(150, 300);
+            }
+            if (enemy2.Top >= 650)
+            {
+                enemy2.Top = -400;
+                Random rand = new Random();
+                enemy2.Left = rand.Next(300, 560);
+            }
+                
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
