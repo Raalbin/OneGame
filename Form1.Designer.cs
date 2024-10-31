@@ -38,11 +38,14 @@
             this.enemy1 = new System.Windows.Forms.PictureBox();
             this.labelLose = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
+            this.coin = new System.Windows.Forms.PictureBox();
+            this.labelCoin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.doroga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doroga2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coin)).BeginInit();
             this.SuspendLayout();
             // 
             // doroga
@@ -68,7 +71,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 20;
+            this.timer.Interval = 15;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // doroga2
@@ -105,28 +108,51 @@
             // labelLose
             // 
             this.labelLose.AutoSize = true;
-            this.labelLose.BackColor = System.Drawing.Color.IndianRed;
-            this.labelLose.Font = new System.Drawing.Font("Yu Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLose.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelLose.Location = new System.Drawing.Point(295, 222);
+            this.labelLose.BackColor = System.Drawing.Color.Goldenrod;
+            this.labelLose.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLose.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelLose.Location = new System.Drawing.Point(324, 221);
             this.labelLose.Name = "labelLose";
-            this.labelLose.Size = new System.Drawing.Size(278, 38);
+            this.labelLose.Size = new System.Drawing.Size(224, 45);
             this.labelLose.TabIndex = 5;
-            this.labelLose.Text = "Доездился";
+            this.labelLose.Text = "Доездился...";
             // 
             // btnRestart
             // 
-            this.btnRestart.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRestart.BackColor = System.Drawing.Color.Goldenrod;
             this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestart.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRestart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRestart.Location = new System.Drawing.Point(288, 287);
+            this.btnRestart.Font = new System.Drawing.Font("Impact", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRestart.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnRestart.Location = new System.Drawing.Point(332, 288);
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.Size = new System.Drawing.Size(297, 43);
+            this.btnRestart.Size = new System.Drawing.Size(211, 43);
             this.btnRestart.TabIndex = 6;
             this.btnRestart.Text = "Погонять ещё";
             this.btnRestart.UseVisualStyleBackColor = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // coin
+            // 
+            this.coin.BackColor = System.Drawing.Color.Transparent;
+            this.coin.Image = ((System.Drawing.Image)(resources.GetObject("coin.Image")));
+            this.coin.Location = new System.Drawing.Point(499, -550);
+            this.coin.Name = "coin";
+            this.coin.Size = new System.Drawing.Size(42, 42);
+            this.coin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coin.TabIndex = 7;
+            this.coin.TabStop = false;
+            // 
+            // labelCoin
+            // 
+            this.labelCoin.AutoSize = true;
+            this.labelCoin.BackColor = System.Drawing.Color.Goldenrod;
+            this.labelCoin.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCoin.ForeColor = System.Drawing.Color.DarkGreen;
+            this.labelCoin.Location = new System.Drawing.Point(0, 614);
+            this.labelCoin.Name = "labelCoin";
+            this.labelCoin.Size = new System.Drawing.Size(143, 36);
+            this.labelCoin.TabIndex = 8;
+            this.labelCoin.Text = "Монеты: 0";
             // 
             // Form1
             // 
@@ -135,6 +161,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(840, 650);
+            this.Controls.Add(this.labelCoin);
+            this.Controls.Add(this.coin);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.labelLose);
             this.Controls.Add(this.enemy1);
@@ -153,6 +181,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.doroga2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +197,8 @@
         private System.Windows.Forms.PictureBox enemy1;
         private System.Windows.Forms.Label labelLose;
         private System.Windows.Forms.Button btnRestart;
+        private System.Windows.Forms.PictureBox coin;
+        private System.Windows.Forms.Label labelCoin;
     }
 }
 
