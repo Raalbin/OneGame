@@ -15,6 +15,7 @@ namespace OneGame
         private Point pos;
         private bool dvig;
 
+      
         public Form1()
         {
             InitializeComponent();
@@ -26,9 +27,6 @@ namespace OneGame
             doroga2.MouseUp += MouseClickUp;
             doroga2.MouseMove += MouseClickMove;
         }
-
-
-
         private void MouseClickDown(object sender, MouseEventArgs e)
         {
             dvig = true;
@@ -71,5 +69,7 @@ namespace OneGame
                 Player.Left += speed;
 
         }
+
+      
     }
 }
