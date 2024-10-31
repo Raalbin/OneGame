@@ -36,6 +36,8 @@
             this.doroga2 = new System.Windows.Forms.PictureBox();
             this.enemy2 = new System.Windows.Forms.PictureBox();
             this.enemy1 = new System.Windows.Forms.PictureBox();
+            this.labelLose = new System.Windows.Forms.Label();
+            this.btnRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.doroga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doroga2)).BeginInit();
@@ -100,6 +102,32 @@
             this.enemy1.TabIndex = 4;
             this.enemy1.TabStop = false;
             // 
+            // labelLose
+            // 
+            this.labelLose.AutoSize = true;
+            this.labelLose.BackColor = System.Drawing.Color.IndianRed;
+            this.labelLose.Font = new System.Drawing.Font("Yu Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLose.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelLose.Location = new System.Drawing.Point(295, 222);
+            this.labelLose.Name = "labelLose";
+            this.labelLose.Size = new System.Drawing.Size(278, 38);
+            this.labelLose.TabIndex = 5;
+            this.labelLose.Text = "Доездился";
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.BackColor = System.Drawing.Color.IndianRed;
+            this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestart.Font = new System.Drawing.Font("Yu Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRestart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRestart.Location = new System.Drawing.Point(288, 287);
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.Size = new System.Drawing.Size(297, 43);
+            this.btnRestart.TabIndex = 6;
+            this.btnRestart.Text = "Погонять ещё";
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +135,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(840, 650);
+            this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.labelLose);
             this.Controls.Add(this.enemy1);
             this.Controls.Add(this.enemy2);
             this.Controls.Add(this.Player);
@@ -124,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -135,6 +166,8 @@
         private System.Windows.Forms.PictureBox doroga2;
         private System.Windows.Forms.PictureBox enemy2;
         private System.Windows.Forms.PictureBox enemy1;
+        private System.Windows.Forms.Label labelLose;
+        private System.Windows.Forms.Button btnRestart;
     }
 }
 

@@ -13,7 +13,7 @@ namespace OneGame
     public partial class Form1 : Form
     {
         private Point pos;
-        private bool dvig;
+        private bool dvig, lose;
 
       
         public Form1()
@@ -26,6 +26,10 @@ namespace OneGame
             doroga2.MouseDown += MouseClickDown;
             doroga2.MouseUp += MouseClickUp;
             doroga2.MouseMove += MouseClickMove;
+
+            labelLose.Visible = false;
+            btnRestart.Visible = false;
+            KeyPreview = true; 
         }
         private void MouseClickDown(object sender, MouseEventArgs e)
         {
@@ -48,11 +52,11 @@ namespace OneGame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            int speed = 25;
+            int speed = 15;
             doroga.Top += speed;
             doroga2.Top += speed;
 
-            int blaspeed = 15;
+            int blaspeed = 10;
             enemy1.Top += blaspeed;
             enemy2.Top += blaspeed;
 
@@ -74,11 +78,22 @@ namespace OneGame
                 Random rand = new Random();
                 enemy2.Left = rand.Next(300, 560);
             }
+
+            if (Player.Bounds.IntersectsWith(enemy1.Bounds)
+                || Player.Bounds.IntersectsWith(enemy2.Bounds))
+            {
+                timer.Enabled = false;
+                labelLose.Visible = true;
+                btnRestart.Visible = true;
+                lose = true;
+            }
                 
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (lose) return;
+
             int speed = 10;
 
             if ((e.KeyCode == Keys.Left || e.KeyCode == Keys.A) && Player.Left > 150)
@@ -88,6 +103,14 @@ namespace OneGame
 
         }
 
-      
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            enemy1.Top = -190;
+            enemy2.Top = -400;
+            labelLose.Visible = false;
+            btnRestart.Visible = false;
+            timer.Enabled = true;
+            lose = false;
+        }
     }
 }
