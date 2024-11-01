@@ -53,11 +53,11 @@ namespace OneGame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            int speed = 10;
+            int speed = 35;
             doroga.Top += speed;
             doroga2.Top += speed;
 
-            int blaspeed = 7;
+            int blaspeed = 25;
             enemy1.Top += blaspeed;
             enemy2.Top += blaspeed;
 
@@ -116,7 +116,7 @@ namespace OneGame
 
             int speed = 10;
 
-            if ((e.KeyCode == Keys.Left || e.KeyCode == Keys.A) && Player.Left > 50)
+            if ((e.KeyCode == Keys.Left || e.KeyCode == Keys.A) && Player.Left > 60)
                 Player.Left -= speed;
             else if ((e.KeyCode == Keys.Right || e.KeyCode == Keys.D) && Player.Right < 750)
                 Player.Left += speed;
